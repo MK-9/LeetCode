@@ -3,7 +3,7 @@ package Palindrome;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(isPalindromeBruteForce(1255251));
+        System.out.println(isPalindromeOptimumSolution(0));
     }
 
     public static boolean isPalindromeBruteForce(int x) {
@@ -32,5 +32,18 @@ public class Solution {
             return 0;
 
         return neg ? (int) -output : (int) output;
+    }
+
+    public static boolean isPalindromeOptimumSolution(int x) {
+        if (x < 0 || (x % 10 == 0 && x != 0))
+            return false;
+
+        long rev = 0;
+        while (x > rev) {
+            rev = rev * 10 + x % 10;
+            x = x / 10;
+        }
+
+        return x == rev || x == rev / 10;
     }
 }
