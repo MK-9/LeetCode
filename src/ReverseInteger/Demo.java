@@ -1,4 +1,4 @@
-package ReverseInteger7;
+package ReverseInteger;
 
 
 public class Demo {
